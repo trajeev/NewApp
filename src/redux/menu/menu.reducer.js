@@ -1,7 +1,7 @@
 import MenuActionTypes from './menu.types'
 
 const INITIAL_STATE = {
-    hidden: false
+    hidden: true
 }
 
 const menuReducer = (state = INITIAL_STATE, action) => {
