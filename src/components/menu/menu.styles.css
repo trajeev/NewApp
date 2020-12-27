@@ -10,6 +10,7 @@
     height: 100%;
     border: 1px solid black;
     background-color: rgb(99, 93, 93);
+    transition: 850ms;
 }
 
 .menu li {

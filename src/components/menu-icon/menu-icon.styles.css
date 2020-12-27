@@ -1,17 +1,15 @@
 .menu-icon {
-    width: 45px;
-    height: 45px;
+    height: 40px;
+    width: 50px;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     cursor: pointer;
-    top: 90px;
-    left: 20px;
 }
 
 .dash-icon {
     width: 24px;
     height: 24px;
-  }
+}
 

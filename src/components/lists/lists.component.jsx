@@ -3,7 +3,8 @@ import ListBox from '../listBox/listBox.component'
 
 class Lists extends Component {
     state = { 
-        lists: [{id: '1', FranchiseName: 'newks', store: '1', storeLocation: 'cl'}] 
+        lists: [{id: '1', FranchiseName: 'newks', store: '1', storeLocation: 'cl'},
+                {id: '2', FranchiseName: 'newks', store: '2', storeLocation: 'Sr'},] 
     }
 
     render() { 
@@ -20,7 +21,7 @@ class Lists extends Component {
         )
 
         return ( 
-            <div>
+            <div className = 'lists'>
             {lists}
             </div> 
          );

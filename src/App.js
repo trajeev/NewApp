@@ -12,7 +12,7 @@ import NewForm from './pages/form/form'
 const App = ({hidden}) => {
     return ( 
       <div className="App">
-        <div>
+        <div className = 'menu-app'>
           { hidden ? <Menu /> : <MenuIcon/>}
         </div>
         <Switch>
