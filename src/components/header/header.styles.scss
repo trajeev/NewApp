@@ -1,0 +1,43 @@
+.header {
+    border-bottom: 1px solid black;
+    height: 50px;
+    text-align: right;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 1px rgb(230, 227, 227);
+    z-index: 1;
+    align-items: center;
+}
+
+.header-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-link{
+    text-decoration: none;
+    color: black;
+    margin-right: 100px;
+    font-size: 20px;
+    display: inline
+}
+
+.header li {
+    padding-top: 10px;
+    list-style: none;
+}
+
+.header li :hover {
+    background-color: rgb(224, 216, 216);
+    transition: 0.5s;
+}
+
+.header a{
+    padding: 5px;
+    margin-top: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+ 

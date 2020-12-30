@@ -31,7 +31,7 @@ class Form extends Component {
 
      render() { 
           return ( 
-          <div className = 'sign-in'>
+          <div className = 'form-registration'>
                <h1>Create new form</h1>
                <form onSubmit = {this.handleSubmit}>
                <Input 
