@@ -1,7 +1,10 @@
 .App {
   text-align: center;
+  position: relative;
+  min-height: 100vh;
 }
 
 .App-switch {
   margin-top: 15px;
+  padding-bottom: 10rem;
 }

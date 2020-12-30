@@ -8,6 +8,7 @@ import List from './pages/List/list.jsx'
 import NewForm from './pages/form/form'
 import Header from './components/header/header.component'
 import SignIn from './components/sign-in/signIn.component'
+import Footer from './components/footer/footer.component'
 
 const App = () => {
     return ( 
@@ -24,6 +25,7 @@ const App = () => {
             <Route path = '/signin' component = {SignIn} />
           </Switch>
         </div>
+        <Footer />
       </div> );
 }
  

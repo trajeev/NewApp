@@ -1,5 +1,5 @@
 import React from 'react';
-import './menu.styles.css'
+import './menu.styles.scss'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {toggleMenuHidden} from '../../redux/menu/menu.action'
