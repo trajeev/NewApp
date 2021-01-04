@@ -36,7 +36,7 @@ class Form extends Component {
                     name = 'franchiseName' 
                     type = 'text'
                     label = 'Franchise Name' 
-                    placehoder = 'franchise name'
+                    placehoder = 'franchiseName'
                     value = {this.state.franchiseName}
                     handleChange = {this.handleChange} />
                <Input 
