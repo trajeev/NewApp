@@ -34,38 +34,44 @@ class Form extends Component {
                <form onSubmit = {this.handleSubmit}>
                <Input 
                     name = 'franchiseName' 
-                    type = 'name'
+                    type = 'text'
                     label = 'Franchise Name' 
+                    placehoder = 'franchise name'
                     value = {this.state.franchiseName}
                     handleChange = {this.handleChange} />
                <Input 
-                    name = 'store no' 
-                    type = 'name'
+                    name = 'storeNo' 
+                    type = 'text'
                     label = 'Store Number' 
+                    placehoder = 'store no'
                     value = {this.state.storeNo}
                     handleChange = {this.handleChange} />
                <Input 
-                    name = 'store Location' 
-                    type = 'name'
+                    name = 'storeLocation' 
+                    type = 'text'
                     label = 'Store Location' 
+                    placehoder = 'store location'
                     value = {this.state.storeLocation}
                     handleChange = {this.handleChange} />
                <Input 
-                    name = 'store id' 
-                    type = 'name'
+                    name = 'storeId' 
+                    type = 'text'
                     label = 'Store ID' 
+                    placehoder = 'store ID'
                     value = {this.state.storeId}
                     handleChange = {this.handleChange} />
                <Input 
-                    name = 'store address' 
-                    type = 'name'
+                    name = 'storeAddress' 
+                    type = 'text'
                     label = 'Store Address' 
+                    placehoder = 'store address'
                     value = {this.state.storeAddress}
                     handleChange = {this.handleChange} />
                <Input 
                     name = 'name' 
-                    type = 'name'
+                    type = 'text'
                     label = 'name' 
+                    placehoder = 'name'
                     value = {this.state.name}
                     handleChange = {this.handleChange} />
                   <CustomButton type = 'submit'>Submit</CustomButton>
