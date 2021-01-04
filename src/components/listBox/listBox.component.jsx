@@ -1,10 +1,12 @@
 import React from 'react';
-import './listBox.styles.css'
-import DeleteIcon from '../delete-icon/delete-icon.component'
-import Edit from '../edit-icon/edit-icon.component'
+import './listBox.styles.scss'
+import {AiFillEdit} from "react-icons/ai"
+import {MdDelete} from 'react-icons/md'
+import {IconContext} from 'react-icons'
 
 const ListBox = (props) => {
     return ( 
+        <IconContext.Provider value = {{size: '25px', color: 'rgb(83, 146, 182)'}}>
         <div className = 'listBox'>
             <div className = 'listBox-sentence'>
                 <span >{props.franchiseName}  </span>  
@@ -12,10 +14,11 @@ const ListBox = (props) => {
                 <span >{props.storeLocation}  </span>   
             </div>
             <div className = 'listBox-icons'>
-                <Edit/>
-                <DeleteIcon />
+                <AiFillEdit className = 'listBox-icon' />
+                <MdDelete className = 'listBox-icon' />
             </div>
         </div>
+        </IconContext.Provider>
      );
 }
  

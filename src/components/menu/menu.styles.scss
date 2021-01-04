@@ -47,6 +47,9 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
+    color: rgb(83, 146, 182);
+    position: relative;
+    left: 12px;
 }
 
 .icon {
@@ -56,12 +59,13 @@
 }
 
 .dash-icon {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     position: fixed;
     left: 0;
     top: 55px;
+    color: rgb(83, 146, 182);
 }
 
 

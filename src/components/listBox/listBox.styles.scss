@@ -7,7 +7,7 @@
     width: 50%;
     padding: 20px;
     font-size: 20px;
-    background-color: #bac5c0;
+    background-color: #d1d8d8;
     display: flex ;
     align-items: center;
     justify-content: space-between
@@ -16,10 +16,18 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.listBox-icon {
+    margin-left: 15px;
+    size: 25px;
+    cursor: pointer;
 }
 
 .listBox-sentence {
     margin-top: 5px;
     display: flex;
     flex-direction: column;
+    color: rgb(83, 146, 182);
 }

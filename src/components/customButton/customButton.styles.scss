@@ -6,7 +6,7 @@
   line-height: 50px;
   padding: 0 35px 0 35px;
   font-size: 15px;
-  background-color:  rgb(49, 48, 48);
+  background-color:  rgb(83, 146, 182);
   color: white;
   text-transform: uppercase;
   font-family: 'Open Sans Condensed';
@@ -16,7 +16,7 @@
 
   &:hover {
     background-color: white;
-    color: rgb(49, 48, 48);
-    border: 1px solid black;
+    color: rgb(83, 146, 182);
+    border: 1px solid rgb(83, 146, 182);
   }
 }
