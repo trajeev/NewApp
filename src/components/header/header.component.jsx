@@ -7,7 +7,7 @@ import { BsIntersect } from "react-icons/bs";
 const Header = () => (
     <div className = 'header'>
         <header className = 'header-header'>
-            <BsIntersect size = '25px' style = {{marginTop: '10px', marginLeft: '50px'}}/>
+            <BsIntersect size = '25px' style = {{marginTop: '10px', marginLeft: '50px', color: 'black'}}/>
             <ul>
                 <li>
                     <Link to = '/about' className = 'header-link'>

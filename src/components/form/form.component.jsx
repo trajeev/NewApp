@@ -11,13 +11,11 @@ class Form extends Component {
           storeId: '',
           storeAddress: '',
           name: '',
-          email: '',
-          password: ''
      }
 
      handleSubmit = (event) => {
           event.preventDefault()
-          this.setState({name: '', email: '', password: '',franchiseName: '',
+          this.setState({name: '',franchiseName: '',
           storeNo: '',
           storeLocation: '',
           storeId: '',
@@ -70,18 +68,6 @@ class Form extends Component {
                     label = 'name' 
                     value = {this.state.name}
                     handleChange = {this.handleChange} />
-               <Input 
-                    name = 'email' 
-                    type = 'email'
-                    label = 'email' 
-                    value = {this.state.email}
-                    handleChange = {this.handleChange}/>
-               <Input 
-                    name = 'password' 
-                    type = 'password'
-                    label = 'password' 
-                    value = {this.state.password}
-                    handleChange = {this.handleChange}/>
                   <CustomButton type = 'submit'>Submit</CustomButton>
                </form>
           </div> );

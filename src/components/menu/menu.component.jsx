@@ -7,9 +7,11 @@ import {ReactComponent as CloseIcon} from '../../assets/closeIcon.svg'
 import {ReactComponent as DashIcon} from '../../assets/icons8-menu.svg'
 import { AiOutlineHome } from "react-icons/ai"
 import { AiOutlineAppstore } from "react-icons/ai"
+import {IconContext} from 'react-icons'
 
 
 const Menu = ({toggleMenuHidden, hidden}) => (
+    <IconContext.Provider value = {{size: '25px'}}>
     <div >
         {hidden ? 
         (<DashIcon className = 'dash-icon' onClick = {toggleMenuHidden}/>) :
@@ -20,17 +22,18 @@ const Menu = ({toggleMenuHidden, hidden}) => (
                 <ul>
                     <li>
                         <Link to = '/' onClick = {toggleMenuHidden}>
-                            <AiOutlineHome size = '25px' />   Home
+                            <AiOutlineHome style = {{marginRight: '10px'}}/>   Home
                         </Link>
                     </li>
                     <li>
                         <Link to = '/list' onClick = {toggleMenuHidden}>
-                            <AiOutlineAppstore size = '25px' style = {{display: 'inline'}} /> STORE SETUP
+                            <AiOutlineAppstore style = {{marginRight: '10px'}}/> Store Setup
                         </Link>
                     </li>
                 </ul>
             </div>)} 
     </div>
+    </IconContext.Provider>
 )
  
 const mapDispatchToProps = dispatch => ({

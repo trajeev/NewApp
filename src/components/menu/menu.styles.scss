@@ -8,8 +8,8 @@
     position: fixed;
     width: 200px;
     height: 100%;
-    border-right: 1px solid rgb(172, 169, 169);
-    border-top: 1px solid rgb(172, 169, 169);
+    border-right: 1px solid rgb(83, 146, 182);
+    border-top: 1px solid rgb(83, 146, 182);
     z-index: 2;
     background-color: rgb(255, 255, 254);
 }
@@ -20,11 +20,13 @@
     list-style: none;
     text-align: start;
     cursor: pointer;
+    
 }
 
 .menu ul :hover{
     background-color: rgb(224, 216, 216);
-    transition: 0.5s;
+    transition: 0.35s;
+    opacity: 0.8;
 }
 
 .menu ul :hover ::after {
@@ -34,8 +36,11 @@
 
 .menu a{
     text-decoration: none;
-    color: black;
-    font-size: 18px;
+    color: rgb(83, 146, 182);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .close-icon {

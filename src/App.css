@@ -1,7 +1,10 @@
+
+
 .App {
   text-align: center;
   position: relative;
   min-height: 100vh;
+  overflow-y: scroll;
 }
 
 .App-switch {
