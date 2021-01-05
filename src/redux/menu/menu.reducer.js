@@ -1,7 +1,8 @@
 import MenuActionTypes from './menu.types'
 
 const INITIAL_STATE = {
-    hidden: true
+    hidden: true,
+    secondMenu: false
 }
 
 const menuReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +11,11 @@ const menuReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 hidden: !state.hidden
+            }
+        case MenuActionTypes.TOGGLE_SECOND_MENU: 
+            return {
+                ...state,
+                secondMenu: !state.secondMenu
             }
         default: 
             return state

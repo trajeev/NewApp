@@ -9,14 +9,14 @@ import NewForm from './pages/form/form'
 import Header from './components/header/header.component'
 import SignIn from './components/sign-in/signIn.component'
 import Footer from './components/footer/footer.component'
+// import SubMenu from './components/submenu/submenu.component'
+import {toggleSecondMenu} from './redux/menu/menu.action'
 
-const App = () => {
+const App = ({secondMenu, toggleSecondMenu}) => {
     return ( 
       <div className="App">
         <Header />
-        <div className = 'app-menu'>
            <Menu /> 
-        </div>
         <div className = 'App-switch'>
           <Switch >
             <Route exact path = '/' component = {HomePage} />
@@ -30,9 +30,13 @@ const App = () => {
 }
  
 const mapStateToProps = state => ({
-  hidden: state.menu.hidden
+  secondMenu: state.menu.secondMenu
 })
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  toggleSecondMenu: () => dispatch(toggleSecondMenu())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 

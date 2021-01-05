@@ -7,7 +7,7 @@ import Lists from '../../components/lists/lists.component'
 const List = ({history}) =>  {
     return ( 
         <div className = 'list'> 
-            <h1 style = {{color: 'rgb(83, 146, 182)'}}>List</h1>
+            <h1 style = {{color: 'blue'}}>List</h1>
             <AiOutlinePlusCircle className = 'add-icon' onClick = {() => {history.push('/newForm')}}/>
             <Lists />
         </div>
