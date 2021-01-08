@@ -30,7 +30,7 @@ class Form extends Component {
      render() { 
           return ( 
           <div className = 'form-registration'>
-               <h1 style = {{color: 'rgb(83, 146, 182)'}}>Create new form</h1>
+               <h1 style = {{color: 'blue'}}>Create new form</h1>
                <form onSubmit = {this.handleSubmit}>
                <Input 
                     name = 'franchiseName' 

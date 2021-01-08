@@ -22,7 +22,7 @@ class SignIn extends Component {
     render() { 
         return ( 
             <div className = 'sign-in'>
-                <h1 style = {{color: 'rgb(83, 146, 182)'}}>SIGN IN</h1>
+                <h1 style = {{color: 'blue'}}>SIGN IN</h1>
                 <form onSubmit = {this.handleSubmit}>
                 <Input 
                     name = 'email' 
