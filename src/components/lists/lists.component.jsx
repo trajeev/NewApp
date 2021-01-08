@@ -1,31 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ListBox from '../listBox/listBox.component'
+import {connect} from 'react-redux'
 
-class Lists extends Component {
-    state = { 
-        lists: [{id: '1', FranchiseName: 'newks', store: '1', storeLocation: 'cl'},
-                {id: '2', FranchiseName: 'newks', store: '2', storeLocation: 'Sr'},] 
-    }
+const Lists = ({lists}) => {
+    let listCard = (
+        <div>
+            {lists.map(list => {
+                return <ListBox 
+                    key = {list.id}
+                    list = {list} />
+            })}
+        </div>
+    )
 
-    render() { 
-        let lists = (
-            <div>
-                {this.state.lists.map(list => {
-                    return <ListBox 
-                        key = {list.id}
-                        franchiseName= {list.FranchiseName}
-                        store = {list.store}
-                        storeLocation = {list.storeLocation} />
-                })}
-            </div>
-        )
-
-        return ( 
-            <div className = 'lists'>
-            {lists}
-            </div> 
-         );
-    }
+    return ( 
+        <div className = 'lists'>
+        {listCard}
+        </div> 
+    );
 }
+
+const mapStateToProps = state => ({
+    lists: state.list.lists
+})
  
-export default Lists;
+export default connect(mapStateToProps)(Lists);

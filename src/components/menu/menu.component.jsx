@@ -2,13 +2,12 @@ import React from 'react';
 import './menu.styles.scss'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {toggleMenuHidden, toggleSecondMenu} from '../../redux/menu/menu.action'
+import {toggleMenuHidden} from '../../redux/menu/menu.action'
 import { AiOutlineHome, AiOutlineAppstore, AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai"
 import {IconContext} from 'react-icons'
 import MenuNav from '../menuNav/menuNav.component'
-// import SubMenu from '../submenu/submenu.component'
 
-const Menu = ({toggleMenuHidden, toggleSecondMenu, hidden}) => {
+const Menu = ({toggleMenuHidden, hidden}) => {
     return (
     <IconContext.Provider value = {{size: '25px'}}>
     <div >
@@ -38,8 +37,7 @@ const Menu = ({toggleMenuHidden, toggleSecondMenu, hidden}) => {
 )}
  
 const mapDispatchToProps = dispatch => ({
-    toggleMenuHidden: () => dispatch(toggleMenuHidden()),
-    toggleSecondMenu: () => dispatch(toggleSecondMenu())
+    toggleMenuHidden: () => dispatch(toggleMenuHidden())
 })
 
 const mapStateToProps = state => ({

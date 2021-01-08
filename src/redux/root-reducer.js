@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
+import listReducer from './list/list.reducer'
 import menuReducer from './menu/menu.reducer'
 
 export default combineReducers({
-    menu: menuReducer
+    menu: menuReducer,
+    list: listReducer
 })
 
  

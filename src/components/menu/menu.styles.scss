@@ -8,14 +8,14 @@
     position: fixed;
     width: 200px;
     height: 100%;
-    border-right: 1px solid rgb(83, 146, 182);
-    border-top: 1px solid rgb(83, 146, 182);
+    border-right: 1px solid rgb(38, 38, 218);
+    border-top: 1px solid rgb(38, 38, 218);
     z-index: 2;
     background-color: rgb(255, 255, 254);
 }
 
 .menu li {
-    border-bottom: 1px solid rgb(83, 146, 182);
+    border-bottom: 1px solid rgb(38, 38, 218);
     padding: 15px 10px;
     list-style: none;
     text-align: start;
@@ -36,7 +36,7 @@
 
 .menu a{
     text-decoration: none;
-    color: rgb(83, 146, 182);
+    color: rgb(38, 38, 218);
     font-size: 22px;
     display: flex;
     align-items: center;
@@ -47,7 +47,7 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
-    color: rgb(83, 146, 182);
+    color: rgb(38, 38, 218);
     position: relative;
     left: 12px;
 }
@@ -65,7 +65,7 @@
     position: fixed;
     left: 0;
     top: 55px;
-    color: rgb(83, 146, 182);
+    color: rgb(38, 38, 218);
     transition: height 2s;
 }
 
