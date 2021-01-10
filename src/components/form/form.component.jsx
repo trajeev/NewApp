@@ -1,84 +1,79 @@
-import React, {Component} from 'react';
+import React, { useState} from 'react';
 import Input from '../input/input.component'
 import CustomButton from '../customButton/customButton.component'
 import './form.styles.scss'
+import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
+import {addList} from '../../redux/list/list.action'
 
-class Form extends Component {
-     state = { 
+const Form = ({addList}) => {
+     const [storeCredentials, setCredentials] = useState({
           franchiseName: '',
           storeNo: '',
           storeLocation: '',
-          storeId: '',
-          storeAddress: '',
-          name: '',
-     }
-
-     handleSubmit = (event) => {
+          storeId: ''
+     })
+     const {franchiseName, storeNo, storeLocation, storeId} = storeCredentials
+     const handleSubmit = (event) => {
           event.preventDefault()
-          this.setState({name: '',franchiseName: '',
+          setCredentials({franchiseName: '',
           storeNo: '',
           storeLocation: '',
-          storeId: '',
-          storeAddress: ''})
+          storeId: ''})
      }
      
-     handleChange = event => {
+     const handleChange = event => {
           const {name, value} = event.target
-          this.setState({[name]: value})
+          setCredentials({...storeCredentials, [name]: value})
      }
-
-     render() { 
-          return ( 
-          <div className = 'form-registration'>
-               <h1 style = {{color: 'blue'}}>Create new form</h1>
-               <form onSubmit = {this.handleSubmit}>
-               <Input 
-                    name = 'franchiseName' 
-                    type = 'text'
-                    label = 'Franchise Name' 
-                    placehoder = 'franchiseName'
-                    value = {this.state.franchiseName}
-                    handleChange = {this.handleChange} />
-               <Input 
-                    name = 'storeNo' 
-                    type = 'text'
-                    label = 'Store Number' 
-                    placehoder = 'store no'
-                    value = {this.state.storeNo}
-                    handleChange = {this.handleChange} />
-               <Input 
-                    name = 'storeLocation' 
-                    type = 'text'
-                    label = 'Store Location' 
-                    placehoder = 'store location'
-                    value = {this.state.storeLocation}
-                    handleChange = {this.handleChange} />
-               <Input 
-                    name = 'storeId' 
-                    type = 'text'
-                    label = 'Store ID' 
-                    placehoder = 'store ID'
-                    value = {this.state.storeId}
-                    handleChange = {this.handleChange} />
-               <Input 
-                    name = 'storeAddress' 
-                    type = 'text'
-                    label = 'Store Address' 
-                    placehoder = 'store address'
-                    value = {this.state.storeAddress}
-                    handleChange = {this.handleChange} />
-               <Input 
-                    name = 'name' 
-                    type = 'text'
-                    label = 'name' 
-                    placehoder = 'name'
-                    value = {this.state.name}
-                    handleChange = {this.handleChange} />
-                  <CustomButton type = 'submit'>Submit</CustomButton>
-               </form>
-          </div> );
-     }
+     
+     return ( 
+     <div className = 'form-registration'>
+          <h1 style = {{color: 'blue'}}>Create new form</h1>
+          <form onSubmit = {handleSubmit}>
+          <Input 
+               name = 'franchiseName' 
+               type = 'text'
+               label = 'Franchise Name' 
+               placehoder = 'franchiseName'
+               value = {franchiseName}
+               handleChange = {handleChange} />
+          <Input 
+               name = 'storeNo' 
+               type = 'text'
+               label = 'Store Number' 
+               placehoder = 'store no'
+               value = {storeNo}
+               handleChange = {handleChange} />
+          <Input 
+               name = 'storeLocation' 
+               type = 'text'
+               label = 'Store Location' 
+               placehoder = 'store location'
+               value = {storeLocation}
+               handleChange = {handleChange} />
+          <Input 
+               name = 'storeId' 
+               type = 'text'
+               label = 'Store ID' 
+               placehoder = 'store ID'
+               value = {storeId}
+               handleChange = {handleChange} />
+          <CustomButton onclick = {() => addList({
+               franchiseName, 
+               storeNo,
+               storeLocation,
+               storeId
+          })} type = 'submit'>Submit</CustomButton>
+          </form>
+     </div> )
 }
+
+
+
+const mapDispatchToProps = disptach => ({
+     addList: (list) => disptach(addList(list))
+})
  
-export default Form;
+export default withRouter(connect(null, mapDispatchToProps)(Form));
  

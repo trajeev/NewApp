@@ -7,14 +7,14 @@ import {connect} from 'react-redux'
 import { removeList } from '../../redux/list/list.action';
 
 const ListBox = ({list, removeList}) => {
-    const {FranchiseName, storeLocation, store} = list
+    const {franchiseName, storeLocation, storeNo} = list
     return ( 
         <IconContext.Provider value = {{size: '25px', color: 'blue'}}>
         <div className = 'listBox'>
-            <div className = 'listBox-sentence'>
-                <span >{FranchiseName}  </span>  
-                <span >{store} </span>  
-                <span >{storeLocation}  </span>   
+            <div className = 'listBox-sentence' >
+                <span style = {{color : 'blue'}}>{franchiseName}  </span>  
+                <span style = {{color : 'blue'}}>{storeNo} </span>  
+                <span style = {{color : 'blue'}}>{storeLocation}  </span>   
             </div>
             <div className = 'listBox-icons'>
                 <AiFillEdit className = 'listBox-icon' />

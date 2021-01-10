@@ -1,13 +1,14 @@
 import React from 'react';
 import ListBox from '../listBox/listBox.component'
 import {connect} from 'react-redux'
+import './lists.styles.css'
 
 const Lists = ({lists}) => {
     let listCard = (
         <div>
             {lists.map(list => {
                 return <ListBox 
-                    key = {list.id}
+                    key = {list.storeId}
                     list = {list} />
             })}
         </div>
@@ -15,13 +16,13 @@ const Lists = ({lists}) => {
 
     return ( 
         <div className = 'lists'>
-        {listCard}
+        {lists.length > 0  ? listCard : <span><strong>No forms to show</strong></span>}
         </div> 
     );
 }
 
-const mapStateToProps = state => ({
-    lists: state.list.lists
+const mapStateToProps = ({list: {lists}}) => ({
+    lists
 })
  
 export default connect(mapStateToProps)(Lists);

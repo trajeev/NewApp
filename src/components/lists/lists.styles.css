@@ -1,5 +1,4 @@
-.lists {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
+
+.lists span {
+    color: rgb(106, 106, 223);
 }

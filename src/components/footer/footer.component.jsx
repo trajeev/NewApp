@@ -12,13 +12,13 @@ const Footer = () => (
         <footer className = 'footer-footer'>
         <ul>
             <li>
-                <Link>
+                <Link to = '/facebook'>
                     <FaFacebook style = {{color: 'blue'}} />
                 </Link>
-                <Link>
+                <Link to = '/twitter'>
                     <AiFillTwitterCircle style = {{color: 'rgb(24, 146, 202)'}} />
                 </Link>
-                <Link>
+                <Link to = '/instagram'>
                     <SiInstagram style = {{color: 'rgb(150, 18, 68)'}} />
                 </Link>
             </li>

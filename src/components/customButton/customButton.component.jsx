@@ -4,7 +4,7 @@ import './customButton.styles.scss'
 const CustomButton = (props) => {
     return ( 
         <div >
-            <button className = 'button'>{props.children}</button>
+            <button onClick = {props.onclick} className = 'button'>{props.children}</button>
         </div>
      );
 }

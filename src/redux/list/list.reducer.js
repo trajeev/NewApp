@@ -1,8 +1,7 @@
 import {ListActionTypes} from './list.types'
 
 const INITIAL_STATE = {
-    lists: [{id: '0', FranchiseName: 'newks', store: '1', storeLocation: 'cl'},
-            {id: '1', FranchiseName: 'newks', store: '2', storeLocation: 'Sr'}]
+    lists: []
 }
 
 const listReducer = (state = INITIAL_STATE, action) => {
@@ -10,7 +9,12 @@ const listReducer = (state = INITIAL_STATE, action) => {
         case ListActionTypes.REMOVE_LIST:
             return {
                 ...state,
-                lists: state.lists.filter(list => list.id !== action.payload.id)
+                lists: state.lists.filter(list => list.storeId !== action.payload.storeId)
+            }
+        case ListActionTypes.ADD_LIST: 
+            return {
+                ...state,
+                lists: state.lists.concat(action.payload)
             }
         default:
             return state
