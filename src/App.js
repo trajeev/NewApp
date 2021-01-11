@@ -3,16 +3,16 @@ import Menu from './components/menu/menu.component'
 import React from 'react';
 import HomePage from './pages/homePage/homePage.jsx'
 import {connect} from 'react-redux'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 import List from './pages/List/list.jsx'
 import NewForm from './pages/form/form'
 import Header from './components/header/header.component'
 import SignIn from './components/sign-in/signIn.component'
 import Footer from './components/footer/footer.component'
-// import SubMenu from './components/submenu/submenu.component'
+import EditForm from './components/editForm/editForm.component'
 import {toggleSecondMenu} from './redux/menu/menu.action'
 
-const App = ({secondMenu, toggleSecondMenu}) => {
+const App = ({list}) => {
     return ( 
       <div className="App">
         <Header />
@@ -23,6 +23,7 @@ const App = ({secondMenu, toggleSecondMenu}) => {
             <Route path = '/list'  component = {List} />
             <Route path = '/newForm' component = {NewForm} />
             <Route path = '/signin' component = {SignIn} />
+            <Route path = '/editForm' render = {() =>  (list ? <EditForm /> : <Redirect to = '/list' />)} />
           </Switch>
         </div>
         <Footer />
@@ -30,7 +31,8 @@ const App = ({secondMenu, toggleSecondMenu}) => {
 }
  
 const mapStateToProps = state => ({
-  secondMenu: state.menu.secondMenu
+  secondMenu: state.menu.secondMenu,
+  list: state.list.list
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -4,9 +4,10 @@ import {AiFillEdit} from "react-icons/ai"
 import {MdDelete} from 'react-icons/md'
 import {IconContext} from 'react-icons'
 import {connect} from 'react-redux'
-import { removeList } from '../../redux/list/list.action';
+import { removeList, editForm } from '../../redux/list/list.action';
+import {Link} from 'react-router-dom'
 
-const ListBox = ({list, removeList}) => {
+const ListBox = ({list, removeList, editForm, history}) => {
     const {franchiseName, storeLocation, storeNo} = list
     return ( 
         <IconContext.Provider value = {{size: '25px', color: 'blue'}}>
@@ -17,8 +18,11 @@ const ListBox = ({list, removeList}) => {
                 <span style = {{color : 'blue'}}>{storeLocation}  </span>   
             </div>
             <div className = 'listBox-icons'>
-                <AiFillEdit className = 'listBox-icon' />
-                <MdDelete className = 'listBox-icon' onClick = {() => removeList(list)}/>
+            <Link to = '/editForm' >
+                <AiFillEdit className = 'listBox-icon' onClick = {() => {editForm(list)}}/>
+            </Link>
+                <MdDelete className = 'listBox-icon' style = {{marginBottom: '5px'}} 
+                onClick = {() => removeList(list)}/>
             </div>
         </div>
         </IconContext.Provider>
@@ -26,7 +30,8 @@ const ListBox = ({list, removeList}) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    removeList: (list) => dispatch(removeList(list))
+    removeList: (list) => dispatch(removeList(list)),
+    editForm: (list) => dispatch(editForm(list))
 })
  
-export default connect(null, mapDispatchToProps)(ListBox);
+export default connect(null, mapDispatchToProps)(ListBox)
