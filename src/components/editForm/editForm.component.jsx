@@ -64,7 +64,7 @@ const EditForm = ({list, editList}) => {
                storeNo, 
                storeLocation, 
                storeId
-          })} type = 'submit'>Submit</CustomButton>
+          })} type = 'submit'>Save</CustomButton>
           </form>
     </div>
     )
