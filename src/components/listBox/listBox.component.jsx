@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 import { removeList, editForm } from '../../redux/list/list.action';
 import {Link} from 'react-router-dom'
 
-const ListBox = ({list, removeList, editForm, history}) => {
+const ListBox = ({list, removeList, editForm}) => {
     const {franchiseName, storeLocation, storeNo} = list
     return ( 
         <IconContext.Provider value = {{size: '25px', color: 'blue'}}>

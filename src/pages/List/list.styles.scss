@@ -1,0 +1,31 @@
+
+.list-coloumns {
+    width: 50%;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    border-bottom: 1px solid blue;
+    text-transform: uppercase;
+
+    .list-coloumn {
+        color: blue;
+        padding-bottom: 20px;
+        width: 5%;
+
+        &:last-child {
+            width: 10%;
+        }
+    }
+}
+
+.add-icon {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    margin-top: 30px;
+    color: rgb(83, 146, 182);
+    margin-bottom: 20px;
+}
+

@@ -3,7 +3,7 @@
 }
 .listBox{
     margin: auto ;   
-    margin-top: 20px;
+    margin-top: 5px;
     border: 1px solid #eee;
     box-shadow: 0 2px 2px #ccc;
     border-radius: 10px;
@@ -16,10 +16,10 @@
     justify-content: space-between
 }
 .listBox-icons {
+    width: 25%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 10px;
 }
 
 .listBox-icon {
@@ -29,8 +29,9 @@
 }
 
 .listBox-sentence {
-    margin-top: 5px;
+    width: 65%;
+    margin-top: 2px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     color: blue;
 }
