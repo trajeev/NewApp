@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {addList} from '../../redux/list/list.action'
 
-const Form = ({addList}) => {
+const Form = ({addList, history}) => {
      const [storeCredentials, setCredentials] = useState({
           franchiseName: '',
           storeNo: '',
@@ -16,6 +16,7 @@ const Form = ({addList}) => {
      const {franchiseName, storeNo, storeLocation, storeId} = storeCredentials
      const handleSubmit = (event) => {
           event.preventDefault()
+          history.push('/list')
           setCredentials({franchiseName: '',
           storeNo: '',
           storeLocation: '',

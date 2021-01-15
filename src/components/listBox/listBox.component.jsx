@@ -1,31 +1,42 @@
 import React from 'react';
 import './listBox.styles.scss'
-import {AiFillEdit} from "react-icons/ai"
-import {MdDelete} from 'react-icons/md'
-import {IconContext} from 'react-icons'
+// import {AiFillEdit} from "react-icons/ai"
+// import {MdDelete} from 'react-icons/md'
+// import {IconContext} from 'react-icons'
 import {connect} from 'react-redux'
 import { removeList, editForm } from '../../redux/list/list.action';
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
+
+
 
 const ListBox = ({list, removeList, editForm}) => {
+    const useStyles = makeStyles({
+        table: {
+          minWidth: 650,
+        },
+    });
+
     const {franchiseName, storeLocation, storeNo} = list
+    const classes = useStyles();
     return ( 
-        <IconContext.Provider value = {{size: '25px', color: 'blue'}}>
-        <div className = 'listBox'>
-            <div className = 'listBox-sentence' >
-                <span style = {{color : 'blue'}}>{franchiseName}  </span>  
-                <span style = {{color : 'blue'}}>{storeNo} </span>  
-                <span style = {{color : 'blue'}}>{storeLocation}  </span>   
-            </div>
-            <div className = 'listBox-icons'>
-            <Link to = '/editForm' >
-                <AiFillEdit className = 'listBox-icon' onClick = {() => {editForm(list)}}/>
-            </Link>
-                <MdDelete className = 'listBox-icon' style = {{marginBottom: '5px'}} 
-                onClick = {() => removeList(list)}/>
-            </div>
-        </div>
-        </IconContext.Provider>
+        <TableContainer component = {Paper}>
+            <Table className = {classes.table} aria-label= "simple table">
+                <TableBody>
+                    <TableRow key = {storeNo}>
+                        <TableCell align="right">{franchiseName}</TableCell>
+                        <TableCell align="right">{storeLocation}</TableCell>
+                        <TableCell align="right">{storeNo}</TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+        </TableContainer>
      );
 }
 
