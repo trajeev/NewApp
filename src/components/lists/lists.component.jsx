@@ -1,5 +1,4 @@
 import React from 'react';
-// import ListBox from '../listBox/listBox.component'
 import {connect} from 'react-redux'
 import './lists.styles.css'
 import { makeStyles } from '@material-ui/core/styles';
@@ -28,7 +27,6 @@ const Lists = ({lists, removeList, editForm, history}) => {
         },
         cell: {
             color: 'rgb(60, 60, 211)',
-            // borderBlockColor: 'blue',
             fontSize: 17,
             borderBlockEndColor: 'blue'
         }, 
@@ -41,7 +39,7 @@ const Lists = ({lists, removeList, editForm, history}) => {
     const classes = useStyles();
     return (
     <div className = 'lists'>
-        { lists.length > 0 ?
+        { (lists.length && lists[0] !== null) > 0 ?
         (<TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
             <TableHead >
@@ -54,7 +52,7 @@ const Lists = ({lists, removeList, editForm, history}) => {
             </TableHead>
             <TableBody>
             {lists.map((list) => (
-                <TableRow key={list.name}>
+                <TableRow key={list._id}>
                 <TableCell component="th" scope="list" className = {classes.cell} align = 'center'>
                     {list.franchiseName}
                 </TableCell>

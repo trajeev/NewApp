@@ -14,10 +14,10 @@ class SignIn extends Component {
         this.setState({[name]: value})
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
-        this.setState({email: '', password: ''})
-    }
+    // handleSubmit = (event) => {
+    //     event.preventDefault()
+    //     this.setState({email: '', password: ''})
+    // }
 
     render() { 
         return ( 
@@ -39,8 +39,13 @@ class SignIn extends Component {
                 <CustomButton type = 'submit'>SIGN IN</CustomButton>
                 </form>
             </div>
-            );
+        );
     }
+}
+
+SignIn.prototype.handleSubmit = (event) => {
+    event.preventdefault()  
+    this.setState({email: '', password: ''})
 }
  
 export default SignIn;

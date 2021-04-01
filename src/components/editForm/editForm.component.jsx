@@ -10,16 +10,15 @@ const EditForm = ({list, editList}) => {
         franchiseName: list.franchiseName,
         storeNo: list.storeNo ,
         storeLocation: list.storeLocation ,
-        storeId: list.storeId
+        _id: list._id
    })
-    const {franchiseName, storeNo, storeLocation, storeId} = storeCredentials
+    const {franchiseName, storeNo, storeLocation} = storeCredentials
 
     const handleSubmit = (event) => {
         event.preventDefault()
-          setCredentials({franchiseName: '',
+        setCredentials({franchiseName: '',
           storeNo: '',
-          storeLocation: '',
-          storeId: ''})
+          storeLocation: '',})
     }
 
     const handleChange = event => {
@@ -52,19 +51,7 @@ const EditForm = ({list, editList}) => {
                placehoder = 'store location'
                value = {storeLocation}
                handleChange = {handleChange} />
-          <Input 
-               name = 'storeId' 
-               type = 'text'
-               label = 'Store ID' 
-               placehoder = 'store ID'
-               value = {storeId}
-               handleChange = {handleChange} />
-          <CustomButton onclick = {() => editList({
-               franchiseName, 
-               storeNo, 
-               storeLocation, 
-               storeId
-          })} type = 'submit'>Save</CustomButton>
+          <CustomButton onclick = {() => editList(storeCredentials._id, storeCredentials)} type = "submit">Save</CustomButton>
           </form>
     </div>
     )
@@ -75,7 +62,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-     editList: (list) => dispatch(editList(list))
+     editList: (id, storeCredentials) => dispatch(editList(id, storeCredentials))
 })
  
 export default connect(mapStateToProps, mapDispatchToProps)(EditForm);

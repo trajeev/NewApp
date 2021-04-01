@@ -11,16 +11,14 @@ const Form = ({addList, history}) => {
           franchiseName: '',
           storeNo: '',
           storeLocation: '',
-          storeId: ''
      })
-     const {franchiseName, storeNo, storeLocation, storeId} = storeCredentials
+     const {franchiseName, storeNo, storeLocation} = storeCredentials
      const handleSubmit = (event) => {
           event.preventDefault()
           history.push('/list')
           setCredentials({franchiseName: '',
           storeNo: '',
-          storeLocation: '',
-          storeId: ''})
+          storeLocation: '',})
      }
      
      const handleChange = event => {
@@ -53,19 +51,7 @@ const Form = ({addList, history}) => {
                placehoder = 'store location'
                value = {storeLocation}
                handleChange = {handleChange} />
-          <Input 
-               name = 'storeId' 
-               type = 'text'
-               label = 'Store ID' 
-               placehoder = 'store ID'
-               value = {storeId}
-               handleChange = {handleChange} />
-          <CustomButton onclick = {() => addList({
-               franchiseName, 
-               storeNo,
-               storeLocation,
-               storeId
-          })} type = 'submit'>Submit</CustomButton>
+          <CustomButton onclick = {() => addList(storeCredentials)} type = 'submit'>Submit</CustomButton>
           </form>
      </div> )
 }
@@ -73,7 +59,7 @@ const Form = ({addList, history}) => {
 
 
 const mapDispatchToProps = disptach => ({
-     addList: (list) => disptach(addList(list))
+     addList: (storeCredentials) => disptach(addList(storeCredentials))
 })
  
 export default withRouter(connect(null, mapDispatchToProps)(Form));
