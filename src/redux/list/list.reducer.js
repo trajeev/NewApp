@@ -30,7 +30,10 @@ const listReducer = (state = INITIAL_STATE, action) => {
                 lists: editListFromLists(state.lists, action.payload)
             }
         case ListActionTypes.FETCH_ALL: 
-            return action.payload
+            return {
+                ...state,
+                lists: action.payload
+            }
         default:
             return state
     }

@@ -10,7 +10,6 @@ import Header from './components/header/header.component'
 import SignIn from './components/sign-in/signIn.component'
 import Footer from './components/footer/footer.component'
 import EditForm from './components/editForm/editForm.component'
-import DataFlow from './components/dataFlow/dataflow.component'
 
 const App = ({list}) => {
     return ( 
@@ -23,7 +22,6 @@ const App = ({list}) => {
             <Route path = '/list'  component = {List} />
             <Route path = '/newForm' component = {NewForm} />
             <Route path = '/signin' component = {SignIn} />
-            <Route path = '/dataFlow' component = {DataFlow} />
             <Route path = '/editForm' render = {() =>  (list ? <EditForm /> : <Redirect to = '/list' />)} />
           </Switch>
         </div>

@@ -44,9 +44,9 @@ const Lists = ({lists, removeList, editForm, history}) => {
         <Table className={classes.table} aria-label="simple table">
             <TableHead >
             <TableRow>
-                <TableCell className = {classes.header} align = 'center'>Name</TableCell>
-                <TableCell className = {classes.header} align = 'center'>Location</TableCell>
-                <TableCell className = {classes.header} align = 'center'>Number</TableCell>
+                <TableCell className = {classes.header} align = 'center'>FranchiseName</TableCell>
+                <TableCell className = {classes.header} align = 'center'>StoreLocation</TableCell>
+                <TableCell className = {classes.header} align = 'center'>StoreNo</TableCell>
                 <TableCell className = {classes.header} align = 'center'>Actions</TableCell>
             </TableRow>
             </TableHead>
@@ -74,13 +74,11 @@ const Lists = ({lists, removeList, editForm, history}) => {
     )
 }
 
-const mapStateToProps = ({list: {lists}}) => ({
-    lists
-})
+
 
 const mapDispatchToProps = dispatch => ({
     removeList: (list) => dispatch(removeList(list)),
     editForm: (list) => dispatch(editForm(list))
 })
  
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Lists));
+export default withRouter(connect(null, mapDispatchToProps)(Lists));

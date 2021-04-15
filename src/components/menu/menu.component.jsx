@@ -3,8 +3,7 @@ import './menu.styles.scss'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {toggleMenuHidden} from '../../redux/menu/menu.action'
-import { AiOutlineHome, AiOutlineAppstore, AiOutlineMenuUnfold, AiOutlineMenuFold, 
-    AiOutlineApartment } from "react-icons/ai"
+import { AiOutlineHome, AiOutlineAppstore, AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai"
 import {IconContext} from 'react-icons'
 import MenuNav from '../menuNav/menuNav.component'
 
@@ -27,11 +26,6 @@ const Menu = ({toggleMenuHidden, hidden}) => {
                 <li>
                     <Link to = '/list' onClick = {toggleMenuHidden}>
                         <AiOutlineAppstore style = {{marginRight: '10px'}}/> Store Setup
-                    </Link>
-                </li>
-                <li>
-                    <Link to = '/dataFlow' onClick = {toggleMenuHidden}>
-                        <AiOutlineApartment style = {{marginRight: '10px'}}/> Data Flow
                     </Link>
                 </li>
             </ul>
